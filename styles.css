@@ -1,0 +1,164 @@
+/* <<------ BODY ------>> */                                                                 
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica; 
+    color: #333;
+    box-sizing: border-box; /* Border-box - para os inputs não passarem a largura maxima dos seus elementos PAIS */
+}
+body {
+    background: url("tarde.jpg") no-repeat center center fixed ; 
+    background-size: cover;
+}
+
+/* <<------ MENSAGEM DINÂMICA DE BOAS VINDAS ------>> */  
+h2{
+    display: inline-block;
+    margin: 0;
+    font-size: 15pt;
+    position: fixed;
+    left: 20pt;
+    top: 35pt;
+    color: #232a34;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#icone{
+    position: fixed;
+    left: 140px;
+    top: 26pt;
+    width: 30pt;
+    height: 30pt;
+    background-color: #161a1d00;
+    border: none;
+}
+
+/* <<------ CABEÇALHO DA LISTA DE TAREFA ------>> */ 
+.todo-container {
+    max-width: 450px;
+    margin: 3rem auto; /* Limita a largura do to-do e centraliza ele na tela */
+    background-color: #fdfdfd99;
+    padding: 1.5rem;
+    border-radius: 15px; /* Criou o container */
+    backdrop-filter: blur(15px); 
+}
+.todo-container header {
+    text-align: center;
+    padding: 0 1rem 1rem;
+    border-bottom: 1px solid #ccc;
+}
+
+/* <<------ GERAÇÃO DOS BOTÕES ------>> */ 
+button {
+    background-color: #fdfdfd;
+    color: #102f5e;
+    border: none;
+    border-radius: 15px;
+    padding: .3rem .6rem;
+    font-size: 1rem;
+    cursor: pointer; /* Pra mostrar a mãozinha quando passar por cima do botao */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4;
+}
+/* Define as cores padrões dos icones, e em negrito */
+button i {
+    color: #102f5e; 
+    font-weight: bold;
+    pointer-events: none;
+}
+input, select {
+    padding: 0.25rem 0.5rem;
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+    color: #333;
+}
+
+/* <<------ ANIMAÇÃO DOS BOTÕES ------>> */ 
+
+/* Altera a cor dos botões quando passado o mouse em cima */
+button:hover {
+    background-color: #102f5e;
+    color: #fff;
+}
+/* Modifica a cor do ícole pra branco, quando passar o mouse */
+button:hover > i {
+    color: #fff; 
+}
+.done {
+    background-color: #395169; /* Troca a cor para azul quando a tarefa for concluída */
+}
+.done h3 {
+    color: #fff;
+    text-decoration: line-through; /* Faz o risco em cima da tarefa quando concluída */
+}
+
+/* <<------ CUSTOMIZAÇÃO DA TELA BÁSICA DO FORMULÁRIO ------>> */ 
+#todo-form, #edit-form { /* pra dividir os elementos */
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+}
+#todo-form h4{
+    margin-left: 6rem;
+}
+/* Faz com que a seção "editar" fique oculta até que o usuário clique no botão de edição da tarefa */
+.hide {
+    display: none;
+} 
+h4 {
+    align-self: center;
+    margin-bottom: 0.5rem; 
+    font-weight: bold;
+}
+/* Deixa os inputs ao lado dos botões */
+.form-control {
+    display: flex;  
+}
+.form-control input {
+    margin-right: 0.3rem; /* cria um mini espaçamento do input */
+    margin-top: 0.1rem;
+    width: 100%;
+    height: 40%;
+}
+#edit-form h4{
+    margin-left: 7rem;
+}
+#cancel-edit-btn {
+    margin-top: 1rem;
+}
+
+/* <<------ CUSTOMIZAÇÃO DO "FILTRAR" ------>> */
+#toolbar {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+}
+#toolbar h4 {
+    align-self: center;
+    margin-bottom: .5rem;
+}
+#filter {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#filter select {
+    flex: 1;
+}
+/* <<------ CUSTOMIZAÇÃO DA SEÇÃO ONDE SÃO ADICIONADAS AS TAREFAS DO USUÁRIO ------>> */
+.todo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    transition: .3s;
+}
+.todo h3 {
+    flex: 1;
+    font-size: 0.9rem;
+}
+.todo button {
+    margin-left: 0.4rem;
+}
